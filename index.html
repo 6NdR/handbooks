@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portail de documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #4f46e5, #6366f1);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2rem 1rem;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .card h2 {
+      margin: 0.5rem 0;
+      font-size: 1.4rem;
+      color: #4f46e5;
+    }
+    .card p {
+      margin: 0.5rem 0 0;
+      font-size: 0.95rem;
+      color: #666;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portail de documentation</h1>
+    <p>Accédez à toutes vos documentations facilement</p>
+  </header>
+
+  <div class="container">
+    <a href="https://<ton-utilisateur>.github.io/doc1/" class="card">
+      <h2>Documentation 1</h2>
+      <p>Description courte de la documentation 1</p>
+    </a>
+    <a href="https://<ton-utilisateur>.github.io/doc2/" class="card">
+      <h2>Documentation 2</h2>
+      <p>Description courte de la documentation 2</p>
+    </a>
+    <a href="https://<ton-utilisateur>.github.io/doc3/" class="card">
+      <h2>Documentation 3</h2>
+      <p>Description courte de la documentation 3</p>
+    </a>
+    <!-- Ajoute autant de cartes que nécessaire -->
+  </div>
+
+  <footer>
+    &copy; 2025 Mon Portail de Documentation
+  </footer>
+</body>
+</html>
