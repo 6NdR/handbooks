@@ -1,1 +1,0 @@
-# Virtualisation - Machines virtuelles, containers et cloud

@@ -1,1 +1,0 @@
-# Shell et commandes GNU
