@@ -3,89 +3,242 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portail de documentation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="6NdR Handbooks - Ressources et guides sur les systèmes, réseaux, DevOps et cybersécurité">
+  <meta name="keywords" content="handbooks, Linux, Windows, DevOps, Cybersécurité, 6NdR">
+  <meta name="author" content="6NdR">
+  <title>6NdR - Handbooks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f5f7fa;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #111;
+      color: #eee;
+      line-height: 1.6;
     }
     header {
-      background: linear-gradient(90deg, #4f46e5, #6366f1);
-      color: white;
-      padding: 2rem 1rem;
       text-align: center;
+      padding: 4rem 1rem;
+      background: #000;
+      border-bottom: 2px solid #333;
     }
     header h1 {
-      margin: 0;
-      font-size: 2rem;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
     }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+      font-weight: 400;
+    }
+    .category {
       max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
+    .category h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(250px, 1fr));
+      gap: 1rem;
+      justify-items: center;
+    }
     .card {
-      background: white;
+      background: #1c1c1c;
+      border: 1px solid #333;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 2rem 1rem;
+      padding: 1.5rem;
       text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
       text-decoration: none;
-      color: inherit;
+      color: #eee;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 220px;
+      width: 100%;
+      max-width: 280px;
     }
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+      background: #2a2a2a;
     }
-    .card h2 {
-      margin: 0.5rem 0;
-      font-size: 1.4rem;
-      color: #4f46e5;
+    .card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 0.5rem;
+      filter: grayscale(0%) brightness(1);
+      loading: lazy;
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+      color: #fff;
+      font-weight: 600;
     }
     .card p {
-      margin: 0.5rem 0 0;
       font-size: 0.95rem;
-      color: #666;
+      color: #bbb;
     }
     footer {
       text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #999;
+      padding: 3rem 1rem;
+      font-size: 1rem;
+      color: #666;
+      margin-top: 2rem;
+      background: #000;
+      border-top: 2px solid #333;
+    }
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: #eee;
+    }
+    @media (max-width: 1024px) {
+      .container {
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+      }
+    }
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1.1rem;
+      }
+      .category h2 {
+        font-size: 1.7rem;
+      }
+      .card {
+        height: 200px;
+        max-width: 260px;
+      }
+    }
+    @media (max-width: 480px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding: 2rem 1rem;
+      }
+      header h1 {
+        font-size: 1.8rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .category h2 {
+        font-size: 1.5rem;
+      }
+      .card {
+        height: 180px;
+        max-width: 240px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Portail de documentation</h1>
-    <p>Accédez à toutes vos documentations facilement</p>
-  </header>
 
+<header>
+  <h1>6NdR</h1>
+  <p>Handbooks</p>
+</header>
+
+<!-- Catégorie 1 : Systèmes -->
+<div class="category">
+  <h2>Systèmes</h2>
   <div class="container">
-    <a href="https://<ton-utilisateur>.github.io/doc1/" class="card">
-      <h2>Documentation 1</h2>
-      <p>Description courte de la documentation 1</p>
+    <a href="https://example.github.io/linux/" class="card" aria-label="Handbook Linux">
+      <img src="https://img.icons8.com/ios-filled/64/ffffff/linux.png" alt="Linux" loading="lazy">
+      <h3>Linux</h3>
+      <p>Handbook</p>
     </a>
-    <a href="https://<ton-utilisateur>.github.io/doc2/" class="card">
-      <h2>Documentation 2</h2>
-      <p>Description courte de la documentation 2</p>
+    <a href="https://example.github.io/windows/" class="card" aria-label="Handbook Windows">
+      <img src="https://img.icons8.com/ios-filled/64/ffffff/windows-client.png" alt="Windows" loading="lazy">
+      <h3>Windows</h3>
+      <p>Handbook</p>
     </a>
-    <a href="https://<ton-utilisateur>.github.io/doc3/" class="card">
-      <h2>Documentation 3</h2>
-      <p>Description courte de la documentation 3</p>
-    </a>
-    <!-- Ajoute autant de cartes que nécessaire -->
   </div>
+</div>
 
-  <footer>
-    &copy; 2025 Mon Portail de Documentation
-  </footer>
+<!-- Catégorie 2 : Réseau -->
+<div class="category">
+  <h2>Réseau</h2>
+  <div class="container">
+    <a href="https://example.github.io/reseau/" class="card" aria-label="Handbook Réseau">
+      <img src="https://img.icons8.com/ios-filled/64/ffffff/network.png" alt="Réseau" loading="lazy">
+      <h3>Réseau</h3>
+      <p>Handbook</p>
+    </a>
+  </div>
+</div>
+
+<!-- Catégorie 3 : DevOps -->
+<div class="category">
+  <h2>DevOps</h2>
+  <div class="container">
+    <a href="https://example.github.io/docker/" class="card" aria-label="Handbook Docker">
+      <img src="https://img.icons8.com/ios-filled/64/ffffff/docker.png" alt="Docker" loading="lazy">
+      <h3>Docker</h3>
+      <p>Handbook</p>
+    </a>
+    <a href="https://example.github.io/kubernetes/" class="card" aria-label="Handbook Kubernetes">
+      <img src="https://img.icons8.com/ios-filled/64/ffffff/kubernetes.png" alt="Kubernetes" loading="lazy">
+      <h3>Kubernetes</h3>
+      <p>Handbook</p>
+    </a>
+    <a href="https://example.github.io/terraform/" class="card" aria-label="Handbook Terraform">
+      <img src="https://img.icons8.com/ios-filled/64/ffffff/terraform.png" alt="Terraform" loading="lazy">
+      <h3>Terraform</h3>
+      <p>Handbook</p>
+    </a>
+    <a href="https://example.github.io/git-handbook/" class="card" aria-label="Handbook Git">
+      <img src="https://img.icons8.com/ios-filled/64/ffffff/git.png" alt="Git" loading="lazy">
+      <h3>Git</h3>
+      <p>Handbook</p>
+    </a>
+  </div>
+</div>
+
+<!-- Catégorie 4 : Cybersécurité -->
+<div class="category">
+  <h2>Cybersécurité</h2>
+  <div class="container">
+    <a href="https://example.github.io/cybersec/" class="card" aria-label="Handbook Cybersécurité">
+      <img src="https://img.icons8.com/ios-filled/64/ffffff/lock-2.png" alt="Cybersécurité" loading="lazy">
+      <h3>Cybersécurité</h3>
+      <p>Handbook</p>
+    </a>
+    <a href="https://example.github.io/write-ups-ctf/" class="card" aria-label="Handbook Write-Ups CTF">
+      <img src="https://img.icons8.com/ios-filled/64/ffffff/flag.png" alt="Write-Ups CTF" loading="lazy">
+      <h3>Write-Ups CTF</h3>
+      <p>Handbook</p>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 - 6NdR | <a href="https://example.github.io/about/">À propos</a> | <a href="https://example.github.io/contact/">Contact</a></p>
+</footer>
+
 </body>
 </html>
